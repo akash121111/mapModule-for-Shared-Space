@@ -11,6 +11,12 @@
     </div>
   <% end %>
 
+<% provide :head_tags do %>
+    <meta name='turbolinks-visit-control' content='reload'>
+    <script>
+        document.addEventListener("DOMContentLoaded", initMap2);
+    </script>
+<% end %>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -25,6 +31,11 @@
     <%= form.label :longitude %>
     <%= form.text_field :longitude %>
   </div>
+
+  <p>
+  <div id="map2"></div>
+</p>
+
 
   <div class="actions">
     <%= form.submit %>
